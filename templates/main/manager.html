@@ -1,0 +1,25 @@
+
+
+{% extends 'base.html' %}
+
+
+{% block Menu %}
+    {% for manager in managers %}
+        <div class="navbar">
+        <div class="dropdown">
+            <a href="{% url 'main:manager' manager.id %}"><button class="dropbtn">{{academy.name}}
+                <i class="fa fa-caret-down"></i>
+            </button></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block Content %}
+<h2>Student</h2>
+{% for student in students %}
+    <h4>{{student.name}}</h4>
+{% endfor %}
+<br>
+<h2>Mentors</h2>
+{% endblock %}
